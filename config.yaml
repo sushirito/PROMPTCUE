@@ -1,0 +1,33 @@
+data:
+  backgrounds_dir: "inputs/backgrounds"
+  masks_dir:       "inputs/masks"
+  output_dir:      "outputs"
+
+models:
+  sd_model:         "runwayml/stable-diffusion-v1-5"
+  controlnet_model: "lllyasviel/sd-controlnet-canny"
+
+prompts:
+  marine:
+    - "ripples at dawn"
+    - "turbid estuarine waters"
+    - "dense algal blooms"
+  debris:
+    - "biofouled mask with barnacles and seaweed patches"
+    - "sun-bleached mask coated in green-brown biofilm"
+    - "algae-covered surgical mask floating in shallow water"
+  negative: "clean, artificial, new, people, faces"
+
+img2img:
+  strength:       0.75
+  guidance_scale: 7.5
+  steps:          50
+
+controlnet:
+  strength:           0.5
+  guidance_scale:     10.0
+  conditioning_scale: 1.0
+  steps:              50
+
+segmentation:
+  bin_threshold: 0.5

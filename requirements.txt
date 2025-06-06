@@ -1,0 +1,9 @@
+diffusers
+transformers
+accelerate
+segmentation-models-pytorch
+opencv-python
+xformers
+torch
+Pillow
+PyYAML
