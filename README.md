@@ -21,7 +21,7 @@ Marine plastic debris—particularly disposable masks—poses severe environment
 3. **Composite Overlay**  
    - Alpha-composites aged debris onto generated backgrounds to create realistic “marine pollution” scenarios.  
 
-Within 24 GPU-hours on an NVIDIA A100, PromptCue generates **PROMPTCUE-Masks-60K**—a 60,000-image dataset featuring biofouled masks in varied marine environments. This dataset supports adaptive, real-time debris detection systems (e.g., PiDAR) and can be extended to other debris types or locations.
+Within 24 GPU-hours on an NVIDIA A100, PROMPTCUE generates **PROMPTCUE-Masks-60K**—a 60,000-image dataset featuring biofouled masks in varied marine environments. This dataset supports adaptive, real-time debris detection systems (e.g., PiDAR) and can be extended to other debris types or locations. This repository represents the first portion of our publication's full code; refer to PIDAR for part 2.
 
 ---
 
@@ -46,7 +46,7 @@ PROPMTCUE/                                 ← Project root
 └── src/                                   ← Source code
     ├── main.py                            ← Top-level orchestrator
     ├── config_loader.py                   ← Loads settings from config.yaml
-    ├── utils.py                           ← Helpers: list\_images, ensure\_dir
+    ├── utils.py                           ← Helpers: list_images, ensure_dir
     ├── background_generator.py            ← Img2Img background module
     ├── debris_generator.py                ← ControlNet debris module
     └── compositor.py                      ← Alpha composite logic
@@ -62,7 +62,7 @@ PROPMTCUE/                                 ← Project root
 1. **Clone this repository** and enter its root directory:
    ```bash
    git clone https://github.com/sushirito/PROMPTCUE.git
-   cd PromptCue
+   cd PROMPTCUE
    chmod +x setup.sh
 
 2. **Run the setup script** to install Python dependencies:
@@ -82,7 +82,7 @@ PROPMTCUE/                                 ← Project root
 
 ### 2. Preparing Input Data
 
-PromptCue requires two small “seed” folders:
+PROMPTCUE requires two small “seed” folders:
 
 * **Seed Backgrounds**: Real-world marine scenes (underwater, aerial, surface).
 
@@ -183,10 +183,10 @@ This will run three sequential stages:
 At completion, you will see console logs like:
 
 ```
-All outputs saved under 'outputs'
-  • Synthetic backgrounds → outputs/backgrounds
-  • Aged debris images    → outputs/debris
-  • Final composites      → outputs/composites
+ All done :-) Outputs are saved in 'outputs'
+   - Backgrounds: outputs/backgrounds
+   - Debris:      outputs/debris
+   - Composites:  outputs/composites
 ```
 
 ---
